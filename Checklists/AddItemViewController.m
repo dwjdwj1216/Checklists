@@ -33,6 +33,24 @@
 }
 
 - (IBAction)done:(id)sender {
+    NSLog(@"当前输入的文本内容是：%@",self.textField.text);
     [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+}
+- (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    return nil;
+}
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self.textField becomeFirstResponder];
+}
+
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
+    NSString *newText = [textField.text stringByReplacingCharactersInRange:range withString:string];
+    if([newText length]>0){
+        self.doneBatButton.enabled = YES;
+    }else {
+        self.doneBatButton.enabled = NO;
+    }
+    return YES;
 }
 @end
