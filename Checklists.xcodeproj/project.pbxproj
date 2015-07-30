@@ -15,6 +15,7 @@
 		E55797D71B6A15A4001DC5A6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E55797D51B6A15A4001DC5A6 /* LaunchScreen.storyboard */; };
 		E55797E21B6A15A5001DC5A6 /* ChecklistsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E55797E11B6A15A5001DC5A6 /* ChecklistsTests.m */; };
 		E55797ED1B6A15A5001DC5A6 /* ChecklistsUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = E55797EC1B6A15A5001DC5A6 /* ChecklistsUITests.m */; };
+		E55797FC1B6A49C3001DC5A6 /* ChecklistItem.m in Sources */ = {isa = PBXBuildFile; fileRef = E55797FB1B6A49C3001DC5A6 /* ChecklistItem.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,8 @@
 		E55797E81B6A15A5001DC5A6 /* ChecklistsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChecklistsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E55797EC1B6A15A5001DC5A6 /* ChecklistsUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChecklistsUITests.m; sourceTree = "<group>"; };
 		E55797EE1B6A15A5001DC5A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E55797FA1B6A49C3001DC5A6 /* ChecklistItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChecklistItem.h; sourceTree = "<group>"; };
+		E55797FB1B6A49C3001DC5A6 /* ChecklistItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChecklistItem.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +113,8 @@
 				E55797D51B6A15A4001DC5A6 /* LaunchScreen.storyboard */,
 				E55797D81B6A15A4001DC5A6 /* Info.plist */,
 				E55797C71B6A15A4001DC5A6 /* Supporting Files */,
+				E55797FA1B6A49C3001DC5A6 /* ChecklistItem.h */,
+				E55797FB1B6A49C3001DC5A6 /* ChecklistItem.m */,
 			);
 			path = Checklists;
 			sourceTree = "<group>";
@@ -273,6 +278,7 @@
 				E55797CF1B6A15A4001DC5A6 /* ViewController.m in Sources */,
 				E55797CC1B6A15A4001DC5A6 /* AppDelegate.m in Sources */,
 				E55797C91B6A15A4001DC5A6 /* main.m in Sources */,
+				E55797FC1B6A49C3001DC5A6 /* ChecklistItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
