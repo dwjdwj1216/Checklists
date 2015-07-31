@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		E55797C91B6A15A4001DC5A6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E55797C81B6A15A4001DC5A6 /* main.m */; };
 		E55797CC1B6A15A4001DC5A6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E55797CB1B6A15A4001DC5A6 /* AppDelegate.m */; };
-		E55797CF1B6A15A4001DC5A6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E55797CE1B6A15A4001DC5A6 /* ViewController.m */; };
+		E55797CF1B6A15A4001DC5A6 /* ChecklistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E55797CE1B6A15A4001DC5A6 /* ChecklistViewController.m */; };
 		E55797D21B6A15A4001DC5A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E55797D01B6A15A4001DC5A6 /* Main.storyboard */; };
 		E55797D41B6A15A4001DC5A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E55797D31B6A15A4001DC5A6 /* Assets.xcassets */; };
 		E55797D71B6A15A4001DC5A6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E55797D51B6A15A4001DC5A6 /* LaunchScreen.storyboard */; };
@@ -17,6 +17,8 @@
 		E55797ED1B6A15A5001DC5A6 /* ChecklistsUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = E55797EC1B6A15A5001DC5A6 /* ChecklistsUITests.m */; };
 		E55797FC1B6A49C3001DC5A6 /* ChecklistItem.m in Sources */ = {isa = PBXBuildFile; fileRef = E55797FB1B6A49C3001DC5A6 /* ChecklistItem.m */; };
 		E55797FF1B6A5437001DC5A6 /* ItemDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E55797FE1B6A5437001DC5A6 /* ItemDetailViewController.m */; };
+		E57680A41B6B6B08006331F0 /* AllListsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E57680A31B6B6B08006331F0 /* AllListsViewController.m */; };
+		E57680A71B6B6F3E006331F0 /* Checklist.m in Sources */ = {isa = PBXBuildFile; fileRef = E57680A61B6B6F3E006331F0 /* Checklist.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,8 +43,8 @@
 		E55797C81B6A15A4001DC5A6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E55797CA1B6A15A4001DC5A6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E55797CB1B6A15A4001DC5A6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		E55797CD1B6A15A4001DC5A6 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		E55797CE1B6A15A4001DC5A6 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		E55797CD1B6A15A4001DC5A6 /* ChecklistViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChecklistViewController.h; sourceTree = "<group>"; };
+		E55797CE1B6A15A4001DC5A6 /* ChecklistViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChecklistViewController.m; sourceTree = "<group>"; };
 		E55797D11B6A15A4001DC5A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E55797D31B6A15A4001DC5A6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E55797D61B6A15A4001DC5A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -57,6 +59,10 @@
 		E55797FB1B6A49C3001DC5A6 /* ChecklistItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChecklistItem.m; sourceTree = "<group>"; };
 		E55797FD1B6A5437001DC5A6 /* ItemDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemDetailViewController.h; sourceTree = "<group>"; };
 		E55797FE1B6A5437001DC5A6 /* ItemDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemDetailViewController.m; sourceTree = "<group>"; };
+		E57680A21B6B6B08006331F0 /* AllListsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllListsViewController.h; sourceTree = "<group>"; };
+		E57680A31B6B6B08006331F0 /* AllListsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllListsViewController.m; sourceTree = "<group>"; };
+		E57680A51B6B6F3E006331F0 /* Checklist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Checklist.h; sourceTree = "<group>"; };
+		E57680A61B6B6F3E006331F0 /* Checklist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Checklist.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,8 +115,8 @@
 			children = (
 				E55797CA1B6A15A4001DC5A6 /* AppDelegate.h */,
 				E55797CB1B6A15A4001DC5A6 /* AppDelegate.m */,
-				E55797CD1B6A15A4001DC5A6 /* ViewController.h */,
-				E55797CE1B6A15A4001DC5A6 /* ViewController.m */,
+				E55797CD1B6A15A4001DC5A6 /* ChecklistViewController.h */,
+				E55797CE1B6A15A4001DC5A6 /* ChecklistViewController.m */,
 				E55797D01B6A15A4001DC5A6 /* Main.storyboard */,
 				E55797D31B6A15A4001DC5A6 /* Assets.xcassets */,
 				E55797D51B6A15A4001DC5A6 /* LaunchScreen.storyboard */,
@@ -120,6 +126,10 @@
 				E55797FB1B6A49C3001DC5A6 /* ChecklistItem.m */,
 				E55797FD1B6A5437001DC5A6 /* ItemDetailViewController.h */,
 				E55797FE1B6A5437001DC5A6 /* ItemDetailViewController.m */,
+				E57680A21B6B6B08006331F0 /* AllListsViewController.h */,
+				E57680A31B6B6B08006331F0 /* AllListsViewController.m */,
+				E57680A51B6B6F3E006331F0 /* Checklist.h */,
+				E57680A61B6B6F3E006331F0 /* Checklist.m */,
 			);
 			path = Checklists;
 			sourceTree = "<group>";
@@ -280,11 +290,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E55797CF1B6A15A4001DC5A6 /* ViewController.m in Sources */,
+				E55797CF1B6A15A4001DC5A6 /* ChecklistViewController.m in Sources */,
 				E55797CC1B6A15A4001DC5A6 /* AppDelegate.m in Sources */,
+				E57680A41B6B6B08006331F0 /* AllListsViewController.m in Sources */,
 				E55797C91B6A15A4001DC5A6 /* main.m in Sources */,
 				E55797FF1B6A5437001DC5A6 /* ItemDetailViewController.m in Sources */,
 				E55797FC1B6A49C3001DC5A6 /* ChecklistItem.m in Sources */,
+				E57680A71B6B6F3E006331F0 /* Checklist.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
