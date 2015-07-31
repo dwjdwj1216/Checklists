@@ -38,7 +38,7 @@
                     <navigationItem key="navigationItem" title="Checklists" id="DhS-np-ohT">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="nFH-9J-XuV">
                             <connections>
-                                <segue destination="7rv-wb-M3Q" kind="modal" id="q47-YW-OLC"/>
+                                <segue destination="7rv-wb-M3Q" kind="modal" identifier="AddItem" id="q47-YW-OLC"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -72,6 +72,7 @@
                                                     <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                                     <connections>
                                                         <action selector="done:" destination="ALz-le-2w0" eventType="editingDidEndOnExit" id="WrJ-XG-idB"/>
+                                                        <outlet property="delegate" destination="ALz-le-2w0" id="UYy-jL-3pw"/>
                                                     </connections>
                                                 </textField>
                                             </subviews>

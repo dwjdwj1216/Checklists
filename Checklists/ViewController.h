@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AddItemViewController.h"
+@interface ViewController : UITableViewController <AddItemViewControllerDelegate>
 
-@interface ViewController : UITableViewController
 
-- (IBAction)addItem:(id)sender;
 
 @end
 

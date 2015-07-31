@@ -7,7 +7,7 @@
 //
 
 #import "AddItemViewController.h"
-
+#import "ChecklistItem.h"
 @interface AddItemViewController ()
 
 @end
@@ -29,12 +29,14 @@
     // Dispose of any resources that can be recreated.
 }
 - (IBAction)cancel:(id)sender {
-    [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+    [self.delegate addItemViewControllerDidCancel:self];
 }
 
 - (IBAction)done:(id)sender {
-    NSLog(@"当前输入的文本内容是：%@",self.textField.text);
-    [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+    ChecklistItem *item = [[ChecklistItem alloc]init];
+    item.text = self.textField.text;
+    item.checked = NO;
+    [self.delegate AddItemViewController:self didFinishAddingItem:item];
 }
 - (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     return nil;
