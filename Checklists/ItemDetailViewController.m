@@ -6,13 +6,13 @@
 //  Copyright © 2015年 戴王炯. All rights reserved.
 //
 
-#import "AddItemViewController.h"
+#import "ItemDetailViewController.h"
 #import "ChecklistItem.h"
-@interface AddItemViewController ()
+@interface ItemDetailViewController ()
 
 @end
 
-@implementation AddItemViewController
+@implementation ItemDetailViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -35,7 +35,7 @@
     // Dispose of any resources that can be recreated.
 }
 - (IBAction)cancel:(id)sender {
-    [self.delegate addItemViewControllerDidCancel:self];
+    [self.delegate itemDetailViewControllerDidCancel:self];
 }
 
 - (IBAction)done:(id)sender {
@@ -43,10 +43,10 @@
         ChecklistItem *item = [[ChecklistItem alloc]init];
         item.text = self.textField.text;
         item.checked = NO;
-        [self.delegate AddItemViewController:self didFinishAddingItem:item];
+        [self.delegate ItemDetailViewController:self didFinishAddingItem:item];
     }else{
         self.itemToEdit.text = self.textField.text;
-        [self.delegate AddItemViewController:self didFinishEditingItem:self.itemToEdit];
+        [self.delegate ItemDetailViewController:self didFinishEditingItem:self.itemToEdit];
     }
     
 }

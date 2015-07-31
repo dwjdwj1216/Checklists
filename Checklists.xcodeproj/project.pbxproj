@@ -16,7 +16,7 @@
 		E55797E21B6A15A5001DC5A6 /* ChecklistsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E55797E11B6A15A5001DC5A6 /* ChecklistsTests.m */; };
 		E55797ED1B6A15A5001DC5A6 /* ChecklistsUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = E55797EC1B6A15A5001DC5A6 /* ChecklistsUITests.m */; };
 		E55797FC1B6A49C3001DC5A6 /* ChecklistItem.m in Sources */ = {isa = PBXBuildFile; fileRef = E55797FB1B6A49C3001DC5A6 /* ChecklistItem.m */; };
-		E55797FF1B6A5437001DC5A6 /* AddItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E55797FE1B6A5437001DC5A6 /* AddItemViewController.m */; };
+		E55797FF1B6A5437001DC5A6 /* ItemDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E55797FE1B6A5437001DC5A6 /* ItemDetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,8 +55,8 @@
 		E55797EE1B6A15A5001DC5A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E55797FA1B6A49C3001DC5A6 /* ChecklistItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChecklistItem.h; sourceTree = "<group>"; };
 		E55797FB1B6A49C3001DC5A6 /* ChecklistItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChecklistItem.m; sourceTree = "<group>"; };
-		E55797FD1B6A5437001DC5A6 /* AddItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddItemViewController.h; sourceTree = "<group>"; };
-		E55797FE1B6A5437001DC5A6 /* AddItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddItemViewController.m; sourceTree = "<group>"; };
+		E55797FD1B6A5437001DC5A6 /* ItemDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemDetailViewController.h; sourceTree = "<group>"; };
+		E55797FE1B6A5437001DC5A6 /* ItemDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemDetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,8 +118,8 @@
 				E55797C71B6A15A4001DC5A6 /* Supporting Files */,
 				E55797FA1B6A49C3001DC5A6 /* ChecklistItem.h */,
 				E55797FB1B6A49C3001DC5A6 /* ChecklistItem.m */,
-				E55797FD1B6A5437001DC5A6 /* AddItemViewController.h */,
-				E55797FE1B6A5437001DC5A6 /* AddItemViewController.m */,
+				E55797FD1B6A5437001DC5A6 /* ItemDetailViewController.h */,
+				E55797FE1B6A5437001DC5A6 /* ItemDetailViewController.m */,
 			);
 			path = Checklists;
 			sourceTree = "<group>";
@@ -283,7 +283,7 @@
 				E55797CF1B6A15A4001DC5A6 /* ViewController.m in Sources */,
 				E55797CC1B6A15A4001DC5A6 /* AppDelegate.m in Sources */,
 				E55797C91B6A15A4001DC5A6 /* main.m in Sources */,
-				E55797FF1B6A5437001DC5A6 /* AddItemViewController.m in Sources */,
+				E55797FF1B6A5437001DC5A6 /* ItemDetailViewController.m in Sources */,
 				E55797FC1B6A49C3001DC5A6 /* ChecklistItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -508,6 +508,7 @@
 				E55797F31B6A15A5001DC5A6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E55797F41B6A15A5001DC5A6 /* Build configuration list for PBXNativeTarget "ChecklistsTests" */ = {
 			isa = XCConfigurationList;
@@ -516,6 +517,7 @@
 				E55797F61B6A15A5001DC5A6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E55797F71B6A15A5001DC5A6 /* Build configuration list for PBXNativeTarget "ChecklistsUITests" */ = {
 			isa = XCConfigurationList;
@@ -524,6 +526,7 @@
 				E55797F91B6A15A5001DC5A6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
