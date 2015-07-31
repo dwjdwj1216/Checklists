@@ -9,6 +9,7 @@
 #import "AllListsViewController.h"
 #import "Checklist.h"
 #import "ChecklistViewController.h"
+#import "ChecklistItem.h"
 @interface AllListsViewController ()
 
 @end
@@ -16,33 +17,44 @@
 @implementation AllListsViewController{
     NSMutableArray *_lists;
 }
+#pragma mark 数据加载和保存
+- (NSString *)documentsDirectory{
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths firstObject];
+    return  documentsDirectory;
+}
+- (NSString *)dataFilePath{
+    return [[self documentsDirectory]stringByAppendingPathComponent:@"Checklists.plist"];
+}
+- (void)saveChecklists{
+    NSMutableData *data = [[NSMutableData alloc]init];
+    NSKeyedArchiver *archiver = [[NSKeyedArchiver alloc]initForWritingWithMutableData:data];
+    [archiver encodeObject:_lists forKey:@"Checklists"];
+    [archiver finishEncoding];
+    [data writeToFile:[self dataFilePath] atomically:YES];
+}
+- (void)loadChecklists{
+    NSString *path = [self dataFilePath];
+    if([[NSFileManager defaultManager]fileExistsAtPath:path]){
+        NSData *data = [[NSData alloc]initWithContentsOfFile:path];
+        NSKeyedUnarchiver *unarchiver = [[NSKeyedUnarchiver alloc]initForReadingWithData:data];
+        _lists = [unarchiver decodeObjectForKey:@"Checklists"];
+        [unarchiver finishDecoding];
+    }else{
+        _lists = [[NSMutableArray alloc]initWithCapacity:20];
+    }
+}
+#pragma mark init初始化
 - (id)initWithCoder:(NSCoder *)aDecoder{
     if((self = [super initWithCoder:aDecoder])){
-        _lists = [[NSMutableArray alloc]initWithCapacity:20];
-        Checklist *list;
-        list = [[Checklist alloc]init];
-        list.name = @"娱乐";
-        [_lists addObject:list];
-        
-        list = [[Checklist alloc]init];
-        list.name = @"工作";
-        [_lists addObject:list];
-        
-        list = [[Checklist alloc]init];
-        list.name = @"学习";
-        [_lists addObject:list];
-        
-        list = [[Checklist alloc]init];
-        list.name = @"家庭";
-        [_lists addObject:list];
-        
+        [self loadChecklists];
     }
     return self;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    NSLog(@"di:%@",[self documentsDirectory]);
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -55,7 +67,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-
+#pragma mark Table view data source
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     //return the number of rows in the section
     return [_lists count];
@@ -81,6 +93,24 @@
     Checklist *checklist = _lists[indexPath.row];
     [self performSegueWithIdentifier:@"ShowChecklist" sender:checklist];
 }
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    [_lists removeObjectAtIndex:indexPath.row];
+    NSArray *indexPaths = @[indexPath];
+    [tableView deleteRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationAutomatic];
+    
+}
+
+- (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath{
+    UINavigationController *navigationController = [self.storyboard instantiateViewControllerWithIdentifier:@"ListNavigationController"];
+    ListDetailViewController *controller = (ListDetailViewController *)navigationController.topViewController;
+    controller.delegate = self;
+    Checklist *checklist = _lists[indexPath.row];
+    controller.checklistToEdit = checklist;
+    [self presentViewController:navigationController animated:YES completion:nil];
+}
+
+#pragma mark segue
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if([segue.identifier isEqualToString:@"ShowChecklist"]){
         ChecklistViewController *controller = segue.destinationViewController;
@@ -92,6 +122,7 @@
         controller.checklistToEdit = nil;
     }
 }
+#pragma mark ListDetailViewControllerDelegate
 - (void)listDetailViewControllerDidCancel:(ListDetailViewController *)controller{
     [self dismissViewControllerAnimated:YES completion:nil];
 }
@@ -113,22 +144,6 @@
     cell.textLabel.text = checklist.name;
     [self dismissViewControllerAnimated:YES completion:nil];
     
-}
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
-    
-    [_lists removeObjectAtIndex:indexPath.row];
-    NSArray *indexPaths = @[indexPath];
-    [tableView deleteRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationAutomatic];
-    
-}
-
-- (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath{
-    UINavigationController *navigationController = [self.storyboard instantiateViewControllerWithIdentifier:@"ListNavigationController"];
-    ListDetailViewController *controller = (ListDetailViewController *)navigationController.topViewController;
-    controller.delegate = self;
-    Checklist *checklist = _lists[indexPath.row];
-    controller.checklistToEdit = checklist;
-    [self presentViewController:navigationController animated:YES completion:nil];
 }
 /*
 // Override to support conditional editing of the table view.
