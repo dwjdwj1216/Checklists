@@ -15,7 +15,6 @@
 
 @implementation ChecklistViewController
 
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
@@ -38,10 +37,12 @@
     }else {
         label.text = @"";
     }
+    label.textColor = self.view.tintColor;
 }
 - (void)configureTextForCell:(UITableViewCell *)cell withChecklistItem:(ChecklistItem *)item{
     UILabel *label = (UILabel *)[cell viewWithTag:1000];
-    label.text = item.text;
+    //label.text = item.text;
+    label.text = [NSString stringWithFormat:@"%ld: %@",(long)item.itemId,item.text];
 }
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ChecklistItem"];
@@ -92,18 +93,12 @@
 }
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if([segue.identifier isEqualToString:@"AddItem"]){
-        //1
         UINavigationController *navigationController = segue.destinationViewController;
-        //2
         ItemDetailViewController *controller = (ItemDetailViewController *)navigationController.topViewController;
-        //3
         controller.delegate = self;
     }else if ([segue.identifier isEqualToString:@"EditItem"]){
-        //1
         UINavigationController *navigationController = segue.destinationViewController;
-        //2
         ItemDetailViewController *controller = (ItemDetailViewController *)navigationController.topViewController;
-        //3
         controller.delegate = self;
         NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
         controller.itemToEdit = self.checklist.items[indexPath.row];

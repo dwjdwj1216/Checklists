@@ -21,6 +21,8 @@
 @interface ItemDetailViewController : UITableViewController<UITextFieldDelegate>
 - (IBAction)cancel:(id)sender;
 - (IBAction)done:(id)sender;
+@property (weak, nonatomic) IBOutlet UISwitch *switchControl;
+@property (weak, nonatomic) IBOutlet UILabel *dueDateLabel;
 @property (weak, nonatomic) IBOutlet UITextField *textField;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *doneBatButton;
 @property (strong, nonatomic) ChecklistItem *itemToEdit;

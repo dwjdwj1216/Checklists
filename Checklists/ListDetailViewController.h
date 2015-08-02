@@ -23,7 +23,7 @@
 - (IBAction)cancel:(id)sender;
 - (IBAction)done:(id)sender;
 @property (weak, nonatomic) IBOutlet UITextField *textField;
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *doneBatButton;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *doneBarButton;
 @property (weak, nonatomic)id <ListDetailViewControllerDelegate>delegate;
 @property (strong, nonatomic) Checklist *checklistToEdit;
 @property (weak, nonatomic) IBOutlet UIImageView *iconImageView;

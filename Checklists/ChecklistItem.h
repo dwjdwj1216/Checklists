@@ -11,7 +11,10 @@
 @interface ChecklistItem : NSObject<NSCoding>
 
 @property(nonatomic,copy)NSString *text;
+@property(nonatomic,copy)NSDate *dueDate;
+@property(nonatomic,assign)BOOL shouldRemind;
+@property(nonatomic,assign)NSInteger itemId;
 @property(nonatomic,assign)BOOL checked;
 -(void)toggleChecked;
-
+-(void)scheduleNotification;
 @end

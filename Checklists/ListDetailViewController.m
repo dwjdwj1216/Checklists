@@ -16,6 +16,11 @@
     NSString *_iconName;
 }
 
+- (id)initWithStyle:(UITableViewStyle)style{
+    self = [super initWithStyle:style];
+    return self;
+}
+
 - (id)initWithCoder:(NSCoder *)aDecoder{
     if((self = [super initWithCoder:aDecoder])){
         _iconName = @"Folder";
@@ -29,16 +34,11 @@
     if(self.checklistToEdit != nil){
         self.title = @"Edit Checklist";
         self.textField.text = self.checklistToEdit.name;
-        self.doneBatButton.enabled = YES;
+        self.doneBarButton.enabled = YES;
         _iconName = self.checklistToEdit.iconName;
         
     }
     self.iconImageView.image = [UIImage imageNamed:_iconName];
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -78,12 +78,12 @@
     }
 }
 
-- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
-    NSString *newText = [textField.text stringByReplacingCharactersInRange:range withString:string];
+- (BOOL)textField:(UITextField *)theTextField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
+    NSString *newText = [theTextField.text stringByReplacingCharactersInRange:range withString:string];
     if([newText length]>0){
-        self.doneBatButton.enabled = YES;
+        self.doneBarButton.enabled = YES;
     }else {
-        self.doneBatButton.enabled = NO;
+        self.doneBarButton.enabled = NO;
     }
     return YES;
 }

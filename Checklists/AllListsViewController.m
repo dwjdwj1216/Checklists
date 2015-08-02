@@ -16,12 +16,6 @@
 @end
 
 @implementation AllListsViewController
-#pragma mark 数据加载和保存
-
-
-
-
-#pragma mark init初始化
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -138,7 +132,7 @@
     
 }
 
-- (void)navigationController:(nonnull UINavigationController *)navigationController willShowViewController:(nonnull UIViewController *)viewController animated:(BOOL)animated{
+- (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated{
     if(viewController == self){
         [self.dataModel setIndexOfSelectedChecklist:-1];
     }
